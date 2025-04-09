@@ -5,7 +5,8 @@
       "**/__tests__": true,
       "**/.git": true,
       "**/.github": true,
-      "**/.vscode": false,
+      "**/.vscode": true,
       "**/android": false,
+      "**/Gemfile": true,
     }
   }
