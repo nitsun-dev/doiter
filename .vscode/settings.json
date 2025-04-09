@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+      "**/ios": true,
+      "**/node_modules": true,
+      "**/__tests__": true,
+      "**/.git": true,
+      "**/.github": true,
+      "**/.vscode": false,
+      "**/android": false,
+    }
+  }
