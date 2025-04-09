@@ -5,8 +5,11 @@
       "**/__tests__": true,
       "**/.git": true,
       "**/.github": true,
-      "**/.vscode": true,
-      "**/android": false,
+      "**/.vscode": false,
+      "**/android/.gradle": true,
+      "**/android/.kotlin": true,
+      "**/android/app/build": true,
+      "**/android/build": true,
       "**/Gemfile": true,
     }
   }
