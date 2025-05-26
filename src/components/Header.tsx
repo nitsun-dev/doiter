@@ -5,7 +5,7 @@ import styles from './Header.styles';
 const Header: React.FC = () => {
   const today = new Date();
 
-  const dayName = today.toLocaleDateString('en-US', { weekday: 'long' });
+  const dayName = today.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase();
   const dateString = today.toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
