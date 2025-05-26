@@ -1,73 +1,39 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 
-import { View, ScrollView, Text, Button, Image, TextInput, StyleSheet, SafeAreaView } from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+import {  ScrollView, Text, Button, Image, TextInput, StyleSheet, SafeAreaView } from 'react-native';
+import Header from './src/components/Header';
 
 function App(): React.JSX.Element {
-  const backgroundStyle = {
-    backgroundColor: Colors.white,
-  };
-
-  /*
-   * To keep the template simple and small we're adding padding to prevent view
-   * from rendering under the System UI.
-   * For bigger apps the reccomendation is to use `react-native-safe-area-context`:
-   * https://github.com/AppAndFlow/react-native-safe-area-context
-   *
-   * You can read more about it here:
-   * https://github.com/react-native-community/discussions-and-proposals/discussions/827
-   */
-  const safePadding = '5%';
 
   return (
     <SafeAreaView style={styles.safeArea}>
-    <ScrollView contentContainerStyle={styles.scrollContent}>
-      <Text style={styles.header}>Welcome to the Dummy Page</Text>
+        <ScrollView contentContainerStyle={styles.scrollContent}>
+			<Header/>
+			<Text style={styles.paragraph}>
+				This is a paragraph of sample text meant to simulate content in your React Native app.
+			</Text>
 
-      <Text style={styles.paragraph}>
-        This is a paragraph of sample text meant to simulate content in your React Native app.
-      </Text>
+			<TextInput
+				style={styles.input}
+				placeholder="Enter some text"
+			/>
 
-      <TextInput
-        style={styles.input}
-        placeholder="Enter some text"
-      />
+			<Button title="Click Me" onPress={() => {}} />
 
-      <Button title="Click Me" onPress={() => {}} />
+			<Image
+				source={{ uri: 'https://via.placeholder.com/150' }}
+				style={styles.image}
+			/>
 
-      <Image
-        source={{ uri: 'https://via.placeholder.com/150' }}
-        style={styles.image}
-      />
+			<Text style={styles.paragraph}>
+				Another paragraph to check scrolling functionality and layout.
+			</Text>
 
-      <Text style={styles.paragraph}>
-        Another paragraph to check scrolling functionality and layout.
-      </Text>
+			<Button title="Submit" onPress={() => {}} />
 
-      <Button title="Submit" onPress={() => {}} />
-
-      <Text style={styles.footer}>End of Dummy Content</Text>
-    </ScrollView>
-  </SafeAreaView>
+			<Text style={styles.footer}>End of Dummy Content</Text>
+      	</ScrollView>
+    </SafeAreaView>
   );
 }
 
