@@ -1,40 +1,47 @@
-import React from 'react';
+import React, {useEffect } from 'react';
 
-import {  ScrollView, Text, Button, Image, TextInput, StyleSheet, SafeAreaView } from 'react-native';
+import {  ScrollView, Text, Button, Image, TextInput, StyleSheet, SafeAreaView, StatusBar } from 'react-native';
 import Header from './src/components/Header';
+import changeNavigationBarColor from 'react-native-navigation-bar-color';
 
 function App(): React.JSX.Element {
+	useEffect(() => {
+		changeNavigationBarColor('#f5f5f5');
+	}, []);
 
-  return (
-    <SafeAreaView style={styles.safeArea}>
-        <ScrollView contentContainerStyle={styles.scrollContent}>
+	return (
+		<SafeAreaView style={styles.safeArea}>
+			<StatusBar
+				backgroundColor= '#f5f5f5'
+			/>
 			<Header/>
-			<Text style={styles.paragraph}>
-				This is a paragraph of sample text meant to simulate content in your React Native app.
-			</Text>
+			<ScrollView contentContainerStyle={styles.scrollContent}>
+				<Text style={styles.paragraph}>
+					This is a paragraph of sample text meant to simulate content in your React Native app.
+				</Text>
 
-			<TextInput
-				style={styles.input}
-				placeholder="Enter some text"
-			/>
+				<TextInput
+					style={styles.input}
+					placeholder="Enter some text"
+				/>
 
-			<Button title="Click Me" onPress={() => {}} />
+				<Button title="Click Me" onPress={() => {}} />
 
-			<Image
-				source={{ uri: 'https://via.placeholder.com/150' }}
-				style={styles.image}
-			/>
+				<Image
+					source={{ uri: 'https://via.placeholder.com/150' }}
+					style={styles.image}
+				/>
 
-			<Text style={styles.paragraph}>
-				Another paragraph to check scrolling functionality and layout.
-			</Text>
+				<Text style={styles.paragraph}>
+					Another paragraph to check scrolling functionality and layout.
+				</Text>
 
-			<Button title="Submit" onPress={() => {}} />
+				<Button title="Submit" onPress={() => {}} />
 
-			<Text style={styles.footer}>End of Dummy Content</Text>
-      	</ScrollView>
-    </SafeAreaView>
-  );
+				<Text style={styles.footer}>End of Dummy Content</Text>
+			</ScrollView>
+		</SafeAreaView>
+	);
 }
 
 
